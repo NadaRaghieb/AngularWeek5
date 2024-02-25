@@ -1,0 +1,18 @@
+<div>
+    <h1>Sign Up</h1>
+    <form name="signUpForm" ng-submit="submitForm()">
+      <label>First Name:</label>
+      <input type="text" name="firstName" ng-model="userInfo.firstName" required>
+      <label>Last Name:</label>
+      <input type="text" name="lastName" ng-model="userInfo.lastName" required>
+      <label>Email:</label>
+      <input type="email" name="email" ng-model="userInfo.email" required>
+      <label>Phone:</label>
+      <input type="text" name="phone" ng-model="userInfo.phone" required>
+      <label>Favorite Dish Menu Number:</label>
+      <input type="text" name="menuNumber" ng-model="userInfo.menuNumber" required>
+      <div ng-show="signUpForm.menuNumber.$dirty && signUpForm.menuNumber.$invalid">
+        <p ng-show="signUpForm.menuNumber.$error.required">This field is required.</p>
+      </div>
+      <button type="submit">Submit</button>
+      <div ng-show="successMessage">{{ successMessage }}</div>

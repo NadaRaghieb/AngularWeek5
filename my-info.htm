@@ -1,0 +1,16 @@
+<div>
+    <h1>My Info</h1>
+    <div ng-if="userInfo.firstName">
+      <h3>First Name: {{ userInfo.firstName }}</h3>
+      <h3>Last Name: {{ userInfo.lastName }}</h3>
+      <h3>Email: {{ userInfo.email }}</h3>
+      <h3>Phone: {{ userInfo.phone }}</h3>
+      <h3>Favorite Menu Item:</h3>
+      <img ng-src="{{ userInfo.favoriteItem.imageUrl }}" alt="{{ userInfo.favoriteItem.title }}">
+      <h4>{{ userInfo.favoriteItem.title }}</h4>
+      <p>{{ userInfo.favoriteItem.description }}</p>
+    </div>
+    <div ng-if="!userInfo.firstName">
+      <h3>Not Signed Up Yet. <a href="/sign-up.html">Sign up Now!</a></h3>
+    </div>
+  </div>
